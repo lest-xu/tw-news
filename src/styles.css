@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~font-awesome/css/font-awesome.css";
+@import "styles-news.css";
+@import "styles-vender.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    padding-top: 84px; 
+    overflow: visible;
+}

@@ -1,16 +1,15 @@
-
+import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
+import { PostServiceService } from './../services/post-service.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Post } from 'src/app/models/post';
-import { PostServiceService } from 'src/app/services/post-service.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-post-list',
+  templateUrl: './post-list.component.html',
+  styleUrls: ['./post-list.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy {
-  title = 'twitter-news';
+export class PostListComponent implements OnInit, OnDestroy {
 
   loading: boolean;
   posts: Post[] = [];
@@ -20,10 +19,9 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.loading = true;
     this.subscription = this.postService
-      .getAllPosts().subscribe(
+      .postSource.subscribe(
         p => {
           this.posts = p;
-          this.postService.setAllPosts(this.posts);
 
           this.loading = false;
         });

@@ -1,0 +1,21 @@
+<br>
+<div class="row">
+    <div class="mx-auto">
+        <pagination-controls previousLabel="" nextLabel="" (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+<div class="row">
+    <div class=" mx-auto " [@listAnimation]="posts.length">
+
+        <div class="col-sm-12" *ngFor="let obj of posts  | paginate: { itemsPerPage: 5, currentPage: p }">
+            <app-post-card [post]="obj"></app-post-card>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="mx-auto">
+        <pagination-controls previousLabel="" nextLabel="" (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
