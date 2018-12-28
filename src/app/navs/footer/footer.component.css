@@ -1,0 +1,6 @@
+a {
+    color: #0774a5;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}

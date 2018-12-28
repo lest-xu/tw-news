@@ -1,21 +1,33 @@
 <br>
-<div class="row">
+<!-- <div class="row">
     <div class="mx-auto">
         <pagination-controls previousLabel="" nextLabel="" (pageChange)="p = $event"></pagination-controls>
     </div>
-</div>
+</div> -->
 
 <div class="row">
-    <div class=" mx-auto " [@listAnimation]="posts.length">
+    <button (click)="openDialog()" class="sidebar-toggle position-right">
+        <i class="fa fa-heart text-danger"></i>
+    </button>
+    <div class=" mx-auto ">
 
-        <div class="col-sm-12" *ngFor="let obj of posts  | paginate: { itemsPerPage: 5, currentPage: p }">
+        <div class="col-sm-12" *ngFor="let obj of posts; index as i;">
             <app-post-card [post]="obj"></app-post-card>
+            <!-- <div align="center" *ngIf="i%3 === 2">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                
+                <ins class="adsbygoogle" style="display:inline-block;height:auto" data-ad-client="ca-pub-7132489024324370" data-ad-slot="9434794983" data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div> -->
         </div>
     </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="mx-auto">
         <pagination-controls previousLabel="" nextLabel="" (pageChange)="p = $event"></pagination-controls>
     </div>
-</div>
+</div> -->

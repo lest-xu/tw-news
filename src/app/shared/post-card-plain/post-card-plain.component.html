@@ -1,3 +1,4 @@
+<!-- 
 <div class="card bg-light m-3" style="max-width: 22rem;">
   <div class="card-header">
     <img class="rounded-circle p-r-3" *ngIf="post.user.profile_image_url_https" src="{{post.user.profile_image_url_https}}" alt="profile" /> 
@@ -18,5 +19,25 @@
         <i class="fa fa-retweet"></i> {{post.retweet_count}}
       </span>
     </p>
+  </div>
+</div>
+-->
+<div style="max-width: 22rem;">
+  <div class="text">
+    <div class="content-text">
+      <h4 >
+        <br>
+        {{post.user.name}}
+      </h4>
+      <p>
+        <img class="rounded" *ngIf="media_url_https" src="{{media_url_https}}" alt="profile">
+        <br>
+        <span [innerHTML]="post.text | linky"></span>
+        <br>
+        <span class="badge badge-danger m-r-15">
+          <i class="fa fa-heart"></i> {{post.favorite_count}}
+        </span>
+      </p>
+    </div>
   </div>
 </div>

@@ -33,4 +33,9 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+
+  goToTop() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+
 }
